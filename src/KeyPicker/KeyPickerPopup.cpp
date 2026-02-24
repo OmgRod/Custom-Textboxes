@@ -1,7 +1,9 @@
 #include <Geode/Geode.hpp>
 #include "KeyPickerPopup.hpp"
 
-bool KeyPickerPopup::setup(enumKeyCodes current, std::function<void(enumKeyCodes)> onConfirm) {
+bool KeyPickerPopup::init(enumKeyCodes current, std::function<void(enumKeyCodes)> onConfirm) {
+
+    if (!Popup::init(220.0f, 130.0f)) return false;
     
     key = current;
     this->setTitle("Press a key!", "bigFont.fnt");
@@ -20,7 +22,7 @@ bool KeyPickerPopup::setup(enumKeyCodes current, std::function<void(enumKeyCodes
     return true;
 }
 
-void KeyPickerPopup::keyDown(enumKeyCodes pressedKey) {
+void KeyPickerPopup::keyDown(enumKeyCodes pressedKey, double balls) {
     if (pressedKey == enumKeyCodes::KEY_Escape) pressedKey = enumKeyCodes::KEY_None;
     int k = int(pressedKey);
     if (k < 0) return;

@@ -1,3 +1,6 @@
+# 1.0.6
+- 2.208 support
+
 # 1.0.5
 - Added `instant` property for popups which skips the bounce animation
 - Fixed buttons not being the correct width

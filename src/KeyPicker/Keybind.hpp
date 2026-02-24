@@ -1,15 +1,15 @@
 using namespace geode::prelude;
 
-struct Keybind {
+struct CTKeybind {
 	int value;
 
     // no idea what any of this does but it was in the docs
-	bool operator==(Keybind const& other) const = default;
+	bool operator==(CTKeybind const& other) const = default;
 	operator int() const { return value; };
 
-    Keybind() = default;
-    Keybind(int value) : value(value) {}
-    Keybind(Keybind const&) = default;
+    CTKeybind() = default;
+    CTKeybind(int value) : value(value) {}
+    CTKeybind(CTKeybind const&) = default;
 
     enumKeyCodes getKey() const { return static_cast<enumKeyCodes>(value); }
 };
@@ -32,15 +32,15 @@ public:
 };   
 
 template <>
-struct matjson::Serialize<Keybind> {
-    static matjson::Value toJson(Keybind const& settingValue) { return settingValue.value; }
-    static Result<Keybind> fromJson(matjson::Value const& json) {
+struct matjson::Serialize<CTKeybind> {
+    static matjson::Value toJson(CTKeybind const& settingValue) { return settingValue.value; }
+    static Result<CTKeybind> fromJson(matjson::Value const& json) {
         GEODE_UNWRAP_INTO(auto num, json.asInt());
-        return Ok(Keybind(num));
+        return Ok(CTKeybind(num));
     }
 };
 
 template <>
-struct geode::SettingTypeForValueType<Keybind> {
+struct geode::SettingTypeForValueType<CTKeybind> {
     using SettingType = KeyPicker;
 };

@@ -1,12 +1,12 @@
 {
-	"geode": "4.6.1",
+	"geode": "5.0.0",
 	"gd": {
-		"win": "2.2074",
-		"mac": "2.2074"
+		"win": "2.2081",
+		"mac": "2.2081"
 	},
 	"id": "colon.customtextboxes",
 	"name": "Custom Textboxes",
-	"version": "v1.0.5",
+	"version": "v1.0.6",
 	"developer": "Colon",
 	"description": "Display custom popups, chests, and more",
 	"resources": {
@@ -17,8 +17,8 @@
 		"source": "https://github.com/GDColon/Custom-Textboxes"
 	},
 	"dependencies": {
-		"geode.node-ids": { "version": ">=1.20.0", "importance": "required" },
-		"geode.texture-loader": { "version": ">=1.7.0", "importance": "suggested" }
+		"geode.node-ids": { "version": ">=1.20.0", "required": true },
+		"geode.texture-loader": { "version": ">=1.7.0", "required": false }
 	},
 	"settings": {
 		"key_popup": {

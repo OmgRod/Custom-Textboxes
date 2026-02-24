@@ -108,7 +108,7 @@ Default keybind is HOME
 
 **Button properties** can be a string, OR an object with any of:
 - `content` (string or Text) - The message on the button
-- `background` (string) - Button color
+- `background` (string or int) - Button color
     - green, cyan, pink, grey, darkgrey, red, geodeblue, geodepink, geodepurple, geodeblack or trans
     - Uses GJ_button_0#.png texture in resources folder
 - `texture` ([filename](#texture-files-can-be-read-from)) - Custom button texture, overrides background
@@ -462,7 +462,7 @@ Icon types (1-15):
 
 Reward types (1-15):
 
-`fireShard`, `iceShard`, `poisonShard`, `shadowShard`, `lavaShard`, `key`, `keys`, `orb`, `orbs`, `diamond`, `diamonds`, `icon`, `earthShard`, `bloodShard`, `metalShard`, `lightShard`, `soulShard`, `goldKey`
+`fireShard`, `iceShard`, `poisonShard`, `shadowShard`, `lavaShard`, `key`, `orb`, `diamond`, `icon`, `earthShard`, `bloodShard`, `metalShard`, `lightShard`, `soulShard`, `goldKey`
 
 Item types (1-19):
 

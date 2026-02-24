@@ -66,9 +66,9 @@ std::string getTargetID(std::string path, bool alt) {
 
 // ===== //
 
-enumKeyCodes getPopupKey()   { return Mod::get()->getSettingValue<Keybind>("key_popup").getKey(); };
-enumKeyCodes getTextboxKey() { return Mod::get()->getSettingValue<Keybind>("key_dialogue").getKey(); };
-enumKeyCodes getChestKey()   { return Mod::get()->getSettingValue<Keybind>("key_chest").getKey(); };
+enumKeyCodes getPopupKey()   { return Mod::get()->getSettingValue<CTKeybind>("key_popup").getKey(); };
+enumKeyCodes getTextboxKey() { return Mod::get()->getSettingValue<CTKeybind>("key_dialogue").getKey(); };
+enumKeyCodes getChestKey()   { return Mod::get()->getSettingValue<CTKeybind>("key_chest").getKey(); };
 
 // ===== //
 
@@ -148,7 +148,7 @@ bool killAllAlerts() {
 	auto children = scene->getChildren();
 	for (int i = children->count() - 1; i >= 0; i--) {
 		CCNode* n = typeinfo_cast<CCNode*>(children->objectAtIndex(i));
-		if (n != nullptr && n->getID().starts_with(""_spr)) {
+		if (n != nullptr && std::string(n->getID()).starts_with(""_spr)) {
 			n->removeMeAndCleanup();
 			killed = true;
 		}
@@ -168,8 +168,8 @@ bool killAllAlerts() {
 
 // Handle key presses
 class $modify(CCKeyboardDispatcher) {
-	bool dispatchKeyboardMSG(enumKeyCodes key, bool down, bool repeat) {
-		if (repeat || !down || key == KEY_None || key == KEY_Unknown) return CCKeyboardDispatcher::dispatchKeyboardMSG(key, down, repeat);
+	bool dispatchKeyboardMSG(enumKeyCodes key, bool down, bool repeat, double time) {
+		if (repeat || !down || key == KEY_None || key == KEY_Unknown) return CCKeyboardDispatcher::dispatchKeyboardMSG(key, down, repeat, time);
 
 		else if (key == KEY_Escape && CCKeyboardDispatcher::get()->getShiftKeyPressed()) {
 			if (killAllAlerts()) return false;
@@ -179,7 +179,7 @@ class $modify(CCKeyboardDispatcher) {
 		else if (key == getTextboxKey()) prepTextbox();
 		else if (key == getChestKey()) prepChest();
 		
-		return CCKeyboardDispatcher::dispatchKeyboardMSG(key, down, repeat);
+		return CCKeyboardDispatcher::dispatchKeyboardMSG(key, down, repeat, time);
 	}
 };
 

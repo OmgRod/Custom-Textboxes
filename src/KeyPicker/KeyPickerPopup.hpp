@@ -3,24 +3,24 @@
 #include <Geode/ui/Popup.hpp>
 using namespace geode::prelude;
 
-class KeyPickerPopup : public geode::Popup<enumKeyCodes, std::function<void(enumKeyCodes)>> {
+class KeyPickerPopup : public geode::Popup {
 protected:
-    bool setup(enumKeyCodes current, std::function<void(enumKeyCodes)> onConfirm) override;
-    void keyDown(cocos2d::enumKeyCodes key) override;
+    bool init(enumKeyCodes current, std::function<void(enumKeyCodes)> onConfirm);
+    void keyDown(cocos2d::enumKeyCodes key, double balls) override;
     void updateKeyLabel();
     enumKeyCodes key;
     CCLabelBMFont* keyLabel;
 public:
     static KeyPickerPopup* create(enumKeyCodes current, std::function<void(enumKeyCodes)> onConfirm) {
         auto ret = new KeyPickerPopup();
-        if (ret->initAnchored(220.0f, 130.0f, current, onConfirm)) {
+        if (ret->init(current, onConfirm)) {
             ret->autorelease();
             return ret;
         }
         delete ret;
         return nullptr;
     }
-    enumKeyCodes getKey() { return key; };
+    enumKeyCodes getKey() { return key; }
 };
 
 // I stole this from custom keybinds lol
