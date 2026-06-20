@@ -1,7 +1,7 @@
 #include "utils.hpp"
 #include "Callback.hpp"
 
-#include "CustomChest.hpp"
+#include <CustomChest.hpp>
 
 #include <Geode/modify/RewardUnlockLayer.hpp>
 

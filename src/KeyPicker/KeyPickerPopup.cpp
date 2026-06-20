@@ -1,5 +1,5 @@
 #include <Geode/Geode.hpp>
-#include "KeyPickerPopup.hpp"
+#include <KeyPicker/KeyPickerPopup.hpp>
 
 bool KeyPickerPopup::init(enumKeyCodes current, std::function<void(enumKeyCodes)> onConfirm) {
 

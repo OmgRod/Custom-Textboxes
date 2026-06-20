@@ -1,7 +1,7 @@
 #include "utils.hpp"
 #include "Callback.hpp"
 
-#include "CustomTextbox.hpp"
+#include <CustomTextbox.hpp>
 
 #include <Geode/modify/DialogLayer.hpp>
 #include <Geode/modify/DialogObject.hpp>

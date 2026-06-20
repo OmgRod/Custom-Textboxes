@@ -1,5 +1,5 @@
 {
-	"geode": "5.0.0",
+	"geode": "5.7.1",
 	"gd": {
 		"win": "2.2081",
 		"mac": "2.2081"
@@ -12,7 +12,7 @@
 	"resources": {
 		"files": ["defaults/*.json"]
 	},
-	"tags": ["universal", "offline", "interface"],
+	"tags": ["universal", "offline", "interface", "api"],
 	"links": {
 		"source": "https://github.com/GDColon/Custom-Textboxes"
 	},
@@ -75,5 +75,10 @@
 			"one-of": ["Shift", "Alt", "Ctrl", "Command", "None"],
 			"default": "Alt"
 		}
+	},
+	"api": {
+		"include": [
+			"include/**/*.hpp"
+		]
 	}
 }
