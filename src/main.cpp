@@ -5,12 +5,12 @@
 #include <Geode/modify/PlayLayer.hpp>
 
 #include "utils.hpp"
-#include "CustomAlert.hpp"
-#include "CustomTextbox.hpp"
-#include "CustomChest.hpp"
+#include <CustomAlert.hpp>
+#include <CustomTextbox.hpp>
+#include <CustomChest.hpp>
 
 #include "KeyPicker/Keybind.hpp"
-#include "KeyPicker/KeyPickerPopup.hpp"
+#include <KeyPicker/KeyPickerPopup.hpp>
 
 using namespace geode::prelude;
 

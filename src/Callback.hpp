@@ -3,8 +3,8 @@
 #include <matjson.hpp>
 
 #include "utils.hpp"
-#include "CustomChest.hpp"
-#include "CustomTextbox.hpp"
+#include <CustomChest.hpp>
+#include <CustomTextbox.hpp>
 
 using namespace geode::prelude;
 

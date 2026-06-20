@@ -5,7 +5,7 @@
 #include <Geode/loader/Mod.hpp>
 
 #include "Keybind.hpp"
-#include "KeyPickerPopup.hpp"
+#include <KeyPicker/KeyPickerPopup.hpp>
 
 using namespace geode::prelude;
 
